@@ -1,4 +1,6 @@
-public class PalindromAppUC_2 {
+ class PalindromeApp {
+
+
     public static void main(String[] args) {
 
 
@@ -19,5 +21,4 @@ public class PalindromAppUC_2 {
             System.out.println("Result : Not a Palindrome");
         }
     }
-
 }
