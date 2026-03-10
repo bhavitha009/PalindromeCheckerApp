@@ -8,24 +8,36 @@ public class PalindromeApp {
 
 
 
+        //UC6
+        String input4 = "Racecar";
+        Queue<Character> queue = new LinkedList<>();
+        Stack<Character> stack2 = new Stack<>();
 
-        String input3 = "Level";
-        Stack<Character> stack = new Stack<>();
-
-        for (char c : input3.toLowerCase().toCharArray()) {
-            stack.push(c);
+        for (char c : input4.toLowerCase().toCharArray()) {
+            queue.add(c);
+            stack2.push(c);
         }
 
-        boolean stackCheck = true;
-        for (char c : input3.toLowerCase().toCharArray()) {
-            if (c != stack.pop()) {
-                stackCheck = false;
+        boolean queueStackCheck = true;
+        while (!queue.isEmpty()) {
+            if (!queue.poll().equals(stack2.pop())) {
+                queueStackCheck = false;
                 break;
             }
         }
 
-        System.out.println("Stack Method: " +
-                (stackCheck ? "Palindrome\n" : "Not Palindrome\n"));
+        System.out.println("Queue + Stack Method: " +
+                (queueStackCheck ? "Palindrome\n" : "Not Palindrome\n"));
+
+
+
+
+
+
+
+
+
+
 
 
 
