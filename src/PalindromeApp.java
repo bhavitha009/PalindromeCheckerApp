@@ -6,37 +6,23 @@ public class PalindromeApp {
 
 
 
+        String input5 = "Refer";
+        Deque<Character> deque = new ArrayDeque<>();
 
-
-        //UC6
-        String input4 = "Racecar";
-        Queue<Character> queue = new LinkedList<>();
-        Stack<Character> stack2 = new Stack<>();
-
-        for (char c : input4.toLowerCase().toCharArray()) {
-            queue.add(c);
-            stack2.push(c);
+        for (char c : input5.toLowerCase().toCharArray()) {
+            deque.add(c);
         }
 
-        boolean queueStackCheck = true;
-        while (!queue.isEmpty()) {
-            if (!queue.poll().equals(stack2.pop())) {
-                queueStackCheck = false;
+        boolean dequeCheck = true;
+        while (deque.size() > 1) {
+            if (!deque.pollFirst().equals(deque.pollLast())) {
+                dequeCheck = false;
                 break;
             }
         }
 
-        System.out.println("Queue + Stack Method: " +
-                (queueStackCheck ? "Palindrome\n" : "Not Palindrome\n"));
-
-
-
-
-
-
-
-
-
+        System.out.println("Deque Method: " +
+                (dequeCheck ? "Palindrome\n" : "Not Palindrome\n"));
 
 
 
