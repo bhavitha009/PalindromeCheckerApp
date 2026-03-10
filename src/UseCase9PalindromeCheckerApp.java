@@ -2,20 +2,20 @@ import java.util.Scanner;
 
 public class UseCase9PalindromeCheckerApp {
 
-    // Recursive method
+
     public static boolean isPalindrome(String str, int start, int end) {
 
-        // Base condition
+
         if (start >= end) {
             return true;
         }
 
-        // If mismatch found
+
         if (str.charAt(start) != str.charAt(end)) {
             return false;
         }
 
-        // Recursive call
+
         return isPalindrome(str, start + 1, end - 1);
     }
 
