@@ -2,20 +2,23 @@ import java.util.*;
 
 public class PalindromeApp {
 
-    public static boolean isPalindrome(String str, int start, int end) {
+    public static boolean isPalindrome(String input) {
 
 
-        if (start >= end) {
-            return true;
+        String normalized = input.replaceAll("\\s+", "").toLowerCase();
+
+        int start = 0;
+        int end = normalized.length() - 1;
+
+        while (start < end) {
+            if (normalized.charAt(start) != normalized.charAt(end)) {
+                return false;
+            }
+            start++;
+            end--;
         }
 
-
-        if (str.charAt(start) != str.charAt(end)) {
-            return false;
-        }
-
-
-        return isPalindrome(str, start + 1, end - 1);
+        return true;
     }
 
     public static void main(String[] args) {
@@ -23,12 +26,12 @@ public class PalindromeApp {
         Scanner scanner = new Scanner(System.in);
 
         System.out.print("Enter a string: ");
-        String input = scanner.nextLine().toLowerCase();
+        String input = scanner.nextLine();
 
-        boolean result = isPalindrome(input, 0, input.length() - 1);
+        boolean result = isPalindrome(input);
 
         if (result) {
-            System.out.println("The string is a Palindrome.");
+            System.out.println("The string is a Palindrome (ignoring spaces & case).");
         } else {
             System.out.println("The string is NOT a Palindrome.");
         }
